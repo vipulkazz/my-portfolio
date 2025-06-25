@@ -1,0 +1,39 @@
+/* Logo CSS - Replaces logo.svg with "VIPUL KAUSHIK" text */
+.logo {
+  position: relative;
+  display: inline-block;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -8px;
+  width: 4px;
+  height: 4px;
+  background-color: #F13024;
+  border-radius: 1px;
+}
+
+/* Responsive logo */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 18px;
+    line-height: 24px;
+  }
+} 
