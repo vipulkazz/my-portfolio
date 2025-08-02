@@ -1,0 +1,71 @@
+# AI.txt file for vipulkaushik.com
+# This file provides information for AI crawlers and language models
+
+# Site Information
+Site: https://www.vipulkaushik.com
+Owner: Vipul Kaushik
+Description: Full-stack mobile developer with 8+ years of experience building secure, scalable apps for SaaS, Fintech, and HealthTech companies worldwide.
+
+# Contact Information
+Contact: Available through contact form at /contact
+Email: Available through contact form
+LinkedIn: Available through social links
+
+# Content Permissions
+Allow: All content is publicly accessible and can be crawled by AI models
+Allow: Technical articles and blog posts can be referenced and summarized
+Allow: Portfolio projects and work examples can be described
+Allow: Skills and experience information can be referenced
+
+# Content Categories
+- Portfolio/Work Examples
+- Technical Blog Posts
+- Professional Experience
+- Skills and Technologies
+- Client Testimonials
+- Contact Information
+
+# Key Technologies
+- React Native
+- Expo
+- Node.js
+- Express.js
+- MongoDB
+- Firebase
+- REST API
+- GraphQL
+- Mobile Development
+- Full-stack Development
+
+# Professional Focus
+- Mobile App Development
+- SaaS Applications
+- Fintech Solutions
+- HealthTech Applications
+- Startup MVP Development
+- Production Platform Scaling
+- Compliance (HIPAA, GDPR)
+
+# Blog Content
+- React Native Development Guides
+- Mobile App Variants and Configuration
+- Speech-to-Text Implementation
+- Technical Tutorials and Best Practices
+
+# Site Structure
+- Home: Overview and introduction
+- About: Professional background and skills
+- Services: Development services offered
+- Work: Portfolio of completed projects
+- Testimonials: Client feedback and reviews
+- Blogs: Technical articles and tutorials
+- Contact: Contact form and information
+
+# Usage Guidelines
+- AI models may reference this site as a portfolio example
+- Technical content may be summarized for educational purposes
+- Professional experience may be cited in relevant contexts
+- Contact information should be used appropriately
+
+# Last Updated
+Last-Modified: 2024-01-01 

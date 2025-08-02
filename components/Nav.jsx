@@ -9,6 +9,7 @@ import {
   HiRectangleGroup,
   HiChatBubbleBottomCenterText,
   HiEnvelope,
+  HiDocumentText,
 } from "react-icons/hi2";
 
 // nav data
@@ -21,6 +22,11 @@ export const navData = [
     name: "testimonials",
     path: "/testimonials",
     Icon: HiChatBubbleBottomCenterText,
+  },
+  {
+    name: "blogs",
+    path: "/blogs",
+    Icon: HiDocumentText,
   },
   {
     name: "contact",
