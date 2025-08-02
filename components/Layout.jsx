@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
     >
       {/* metadata */}
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Vipul Kaushik | Portfolio</title>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta
