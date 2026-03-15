@@ -35,6 +35,8 @@ import { TbBrandReactNative } from "react-icons/tb";
 import { BiNotification } from "react-icons/bi";
 import { MdAnimation, MdBugReport } from "react-icons/md";
 
+import Head from "next/head";
+
 import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
@@ -121,6 +123,19 @@ const About = () => {
 
   return (
     <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+      <Head>
+        <title>About Vipul Kaushik | Skills, Experience & Credentials</title>
+        <meta name="description" content="Learn about Vipul Kaushik — 8+ years in mobile development, Engineering Manager, React Native expert. Skills in Expo, Redux, Node.js, MongoDB, and more." />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "url": "https://www.vipulkaushik.com/about",
+          "name": "About Vipul Kaushik",
+          "isPartOf": { "@id": "https://www.vipulkaushik.com/#website" },
+          "mainEntity": { "@id": "https://www.vipulkaushik.com/#person" },
+          "inLanguage": "en-US"
+        }) }} />
+      </Head>
       <Circles />
 
       {/* avatar img */}
@@ -137,7 +152,7 @@ const About = () => {
       <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
         {/* text */}
         <div className="flex-1 flex flex-col justify-center">
-          <motion.h2
+          <motion.h1
             variants={fadeIn("right", 0.2)}
             initial="hidden"
             animate="show"
@@ -146,16 +161,16 @@ const About = () => {
           >
             Captivating <span className="text-accent">stories</span> birth
             magnificent designs.
-          </motion.h2>
+          </motion.h1>
           <motion.p
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            8 years ago, I begin as a react native developer. Since then, I've
+            8 years ago, I began as a react native developer. Since then, I've
             done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
+            collaborated on digital products for business and consumer use.
           </motion.p>
 
           {/* counters */}
@@ -230,7 +245,7 @@ const About = () => {
               >
                 {/* title */}
                 <div className="font-light text-sm xl:text-base break-words">{item.title}</div>
-                
+
                 {/* stage if exists */}
                 {item.stage && (
                   <div className="flex flex-col xl:flex-row items-center gap-x-2 text-sm xl:text-base">

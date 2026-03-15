@@ -8,11 +8,13 @@ const ProjectsBtn = () => {
     <div className="mx-auto xl:mx-0">
       <Link
         href="/work"
+        aria-label="View my projects"
         className="relative w-[185px] h-[185px] flex justify-center items-center bg-circleStar bg-cover bg-center bg-no-repeat group"
       >
         <Image
           src="/rounded-text.png"
-          alt="rounded text"
+          alt=""
+          aria-hidden="true"
           width={141}
           height={148}
           className="animate-spin-slow w-full h-full max-w-[141px] max-h-[148px] pointer-events-none select-none"

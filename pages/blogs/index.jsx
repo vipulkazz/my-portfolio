@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 import { FaMedium } from "react-icons/fa";
 
+import Head from "next/head";
+
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
@@ -16,7 +18,7 @@ const blogData = [
     date: "2024",
     sections: [
       "App Variants Setup",
-      "Splash Screen Configuration", 
+      "Splash Screen Configuration",
       "App Icon Management",
       "Build Configuration",
       "Testing & Deployment",
@@ -43,15 +45,66 @@ const blogData = [
   }
 ];
 
+const blogsSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "url": "https://www.vipulkaushik.com/blogs",
+  "name": "Blog | Vipul Kaushik",
+  "description": "Technical articles on React Native, app variants, speech-to-text, and mobile development best practices by Vipul Kaushik.",
+  "isPartOf": { "@id": "https://www.vipulkaushik.com/#website" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Mobile Application App Variants with Different Splash Screens and App Icons — React Native",
+          "description": "Learn how to create multiple app variants with different splash screens and app icons for React Native applications. This comprehensive guide covers the setup process and implementation details.",
+          "url": "https://medium.com/@vipulkaushik96/mobile-application-app-variants-with-different-splash-screens-and-app-icons-react-native-965ae6939e7d",
+          "author": { "@id": "https://www.vipulkaushik.com/#person" },
+          "datePublished": "2024-01-01",
+          "publisher": { "@id": "https://www.vipulkaushik.com/#person" },
+          "inLanguage": "en-US"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "BlogPosting",
+          "headline": "Build a Speech-to-Text React Native App with Whisper RN",
+          "description": "Create a powerful speech-to-text application using React Native and Whisper RN. This tutorial covers the complete implementation from setup to deployment.",
+          "url": "https://medium.com/@vipulkaushik96/build-a-speech-to-text-react-native-app-with-whisper-rn-364439770728",
+          "author": { "@id": "https://www.vipulkaushik.com/#person" },
+          "datePublished": "2024-01-01",
+          "publisher": { "@id": "https://www.vipulkaushik.com/#person" },
+          "inLanguage": "en-US"
+        }
+      }
+    ]
+  },
+  "inLanguage": "en-US"
+};
+
 const Blogs = () => {
   return (
     <div className="h-full bg-primary/30 py-20 sm:py-36 flex items-center">
+      <Head>
+        <title>Blog | Vipul Kaushik — React Native Tutorials & Mobile Dev Insights</title>
+        <meta name="description" content="Technical articles on React Native, app variants, speech-to-text, and mobile development best practices by Vipul Kaushik." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogsSchema) }}
+        />
+      </Head>
       <Circles />
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col xl:flex-row gap-y-8 xl:gap-x-8">
           {/* text */}
           <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0">
-            <motion.h2
+            <motion.h1
               variants={fadeIn("up", 0.2)}
               initial="hidden"
               animate="show"
@@ -59,7 +112,7 @@ const Blogs = () => {
               className="h2 xl:mt-12"
             >
               My <span className="text-accent">Blog</span> Posts
-            </motion.h2>
+            </motion.h1>
             <motion.p
               variants={fadeIn("up", 0.4)}
               initial="hidden"
@@ -67,7 +120,7 @@ const Blogs = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0 hidden sm:block"
             >
-              Sharing knowledge and insights from my journey in mobile development. 
+              Sharing knowledge and insights from my journey in mobile development.
               Explore my technical articles on React Native, app development, and emerging technologies.
             </motion.p>
           </div>
@@ -100,15 +153,15 @@ const Blogs = () => {
                       <span>{blog.date}</span>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg sm:text-xl font-bold mb-3 group-hover:text-accent transition-colors duration-300 leading-tight">
                     {blog.title}
                   </h3>
-                  
+
                   <p className="text-white/70 mb-4 leading-relaxed text-sm sm:text-base">
                     {blog.description}
                   </p>
-                  
+
                   {/* Article Sections */}
                   <div className="mb-4">
                     <h4 className="text-white/80 text-sm font-medium mb-2">Article Sections:</h4>
@@ -123,7 +176,7 @@ const Blogs = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   <a
                     href={blog.link}
                     target="_blank"
@@ -145,4 +198,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs; 
+export default Blogs;

@@ -1,8 +1,21 @@
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 
+import Head from "next/head";
+
 import { fadeIn } from "../../variants";
 import { useState } from "react";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": "https://www.vipulkaushik.com/contact",
+  "name": "Contact Vipul Kaushik",
+  "description": "Get in touch with Vipul Kaushik for React Native development, mobile app consulting, or full-stack engineering.",
+  "isPartOf": { "@id": "https://www.vipulkaushik.com/#website" },
+  "mainEntity": { "@id": "https://www.vipulkaushik.com/#person" },
+  "inLanguage": "en-US"
+};
 
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -46,11 +59,19 @@ const Contact = () => {
 
   return (
     <div className="h-full bg-primary/30">
+      <Head>
+        <title>Contact Vipul Kaushik | Hire a React Native Developer</title>
+        <meta name="description" content="Get in touch with Vipul Kaushik for React Native development, mobile app consulting, or full-stack engineering. Available for freelance and contract work." />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+        />
+      </Head>
       <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
         {/* text & form */}
         <div className="flex flex-col w-full max-w-[700px]">
           {/* text */}
-          <motion.h2
+          <motion.h1
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             animate="show"
@@ -58,11 +79,12 @@ const Contact = () => {
             className="h2 text-center mb-12"
           >
             Let's <span className="text-accent">connect.</span>
-          </motion.h2>
+          </motion.h1>
 
           {/* status message */}
           {submitStatus === 'success' && (
             <motion.div
+              role="alert"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400"
@@ -73,6 +95,7 @@ const Contact = () => {
 
           {submitStatus === 'error' && (
             <motion.div
+              role="alert"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400"
@@ -98,41 +121,45 @@ const Contact = () => {
                 type="text"
                 name="name"
                 placeholder="Name"
+                aria-label="Name"
                 className="input"
                 disabled={isLoading}
                 aria-disabled={isLoading}
                 required
-                aria-required
+                aria-required="true"
               />
               <input
                 type="email"
                 name="email"
                 placeholder="E-mail"
+                aria-label="Email"
                 className="input"
                 disabled={isLoading}
                 aria-disabled={isLoading}
                 required
-                aria-required
+                aria-required="true"
               />
             </div>
             <input
               type="text"
               name="subject"
               placeholder="Subject"
+              aria-label="Subject"
               className="input"
               disabled={isLoading}
               aria-disabled={isLoading}
               required
-              aria-required
+              aria-required="true"
             />
             <textarea
               name="message"
               placeholder="Message..."
+              aria-label="Message"
               className="textarea"
               disabled={isLoading}
               aria-disabled={isLoading}
               required
-              aria-required
+              aria-required="true"
             />
             <button
               type="submit"

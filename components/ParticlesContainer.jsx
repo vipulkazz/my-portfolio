@@ -13,6 +13,7 @@ const ParticlesContainer = () => {
   return (
     <Particles
       className="w-full h-full absolute translate-z-0"
+      aria-hidden="true"
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}

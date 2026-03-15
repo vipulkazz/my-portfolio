@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import Head from "next/head";
 
-import ParticlesContainer from "../components/ParticlesContainer";
+import dynamic from "next/dynamic";
+const ParticlesContainer = dynamic(() => import("../components/ParticlesContainer"), { ssr: false });
 import ProjectsBtn from "../components/ProjectsBtn";
 import Avatar from "../components/Avatar";
 
@@ -9,6 +11,21 @@ import { fadeIn } from "../variants";
 const Home = () => {
   return (
     <div className="bg-primary/60 h-full">
+      <Head>
+        <title>Vipul Kaushik | Full-Stack Mobile Developer — React Native, Node.js, Expo</title>
+        <meta name="description" content="Hire Vipul Kaushik — full-stack mobile developer with 8+ years building secure, scalable apps for SaaS, Fintech & HealthTech. React Native, Node.js, Expo expert." />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": "https://www.vipulkaushik.com/#webpage",
+          "url": "https://www.vipulkaushik.com",
+          "name": "Vipul Kaushik | Full-Stack Mobile Developer",
+          "description": "Hire Vipul Kaushik — full-stack mobile developer with 8+ years building secure, scalable apps for SaaS, Fintech & HealthTech.",
+          "isPartOf": { "@id": "https://www.vipulkaushik.com/#website" },
+          "about": { "@id": "https://www.vipulkaushik.com/#person" },
+          "inLanguage": "en-US"
+        }) }} />
+      </Head>
       {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <div className="text-center flex flex-col justify-center pt-20 xl:pt-40 xl:text-left h-full container mx-auto">
@@ -23,7 +40,7 @@ const Home = () => {
             <span className="text-accent">Digital Reality</span>
           </motion.h1>
 
- 
+
           <motion.p
             variants={fadeIn("down", 0.3)}
             initial="hidden"
@@ -34,7 +51,7 @@ const Home = () => {
           I'm a full-stack engineer with 8+ years of experience building secure, scalable apps for SaaS, Fintech, and HealthTech companies worldwide. I help startups and growing teams launch MVPs, scale production platforms, and meet compliance needs like HIPAA and GDPR. Whether it's dashboards, KYC systems, or mobile apps — I deliver fast, reliable solutions users trust and investors value.
           </motion.p>
 
-   
+
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
           </div>

@@ -28,7 +28,7 @@ export const socialData = [
   },
   {
     name: "PayPal",
-    link: "https://paypal.me/vipulkaushik96 ",
+    link: "https://paypal.me/vipulkaushik96",
     Icon: FaPaypal,
   },
   {

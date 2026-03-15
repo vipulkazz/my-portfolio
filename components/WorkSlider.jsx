@@ -83,7 +83,7 @@ const WorkSlider = () => {
                   {/* image */}
                   <Image
                     src={image.path}
-                    alt={image.title}
+                    alt={`Screenshot of ${image.title} project`}
                     width={500}
                     height={300}
                     className="w-full h-full object-cover"
@@ -101,6 +101,7 @@ const WorkSlider = () => {
                       href={image.link}
                       target="_blank"
                       rel="noreferrer noopener"
+                      aria-label={`View live ${image.title} project (opens in new tab)`}
                       className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]"
                     >
                       {/* title part 1 */}

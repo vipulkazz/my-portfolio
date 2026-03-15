@@ -5,7 +5,7 @@ const Avatar = () => {
     <div className="hidden lg:flex lg:max-w-none pointer-events-none select-none">
       <Image
         src="/SubjectOne.png"
-        alt="avatar"
+        alt="Vipul Kaushik, Full-Stack Mobile Developer"
         width={737}
         height={678}
         className="translate-z-0 w-full h-full"
