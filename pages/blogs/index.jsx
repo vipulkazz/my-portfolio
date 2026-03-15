@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { FaMedium } from "react-icons/fa";
 
@@ -7,43 +8,7 @@ import Head from "next/head";
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
 import { fadeIn } from "../../variants";
-
-const blogData = [
-  {
-    title: "Mobile Application App Variants with Different Splash Screens and App Icons — React Native",
-    description: "Learn how to create multiple app variants with different splash screens and app icons for React Native applications. This comprehensive guide covers the setup process and implementation details.",
-    link: "https://medium.com/@vipulkaushik96/mobile-application-app-variants-with-different-splash-screens-and-app-icons-react-native-965ae6939e7d",
-    readTime: "5 min read",
-    category: "React Native",
-    date: "2024",
-    sections: [
-      "App Variants Setup",
-      "Splash Screen Configuration",
-      "App Icon Management",
-      "Build Configuration",
-      "Testing & Deployment",
-      "Performance Optimization",
-      "Debugging Tips"
-    ]
-  },
-  {
-    title: "Build a Speech-to-Text React Native App with Whisper RN",
-    description: "Create a powerful speech-to-text application using React Native and Whisper RN. This tutorial covers the complete implementation from setup to deployment.",
-    link: "https://medium.com/@vipulkaushik96/build-a-speech-to-text-react-native-app-with-whisper-rn-364439770728",
-    readTime: "8 min read",
-    category: "React Native",
-    date: "2024",
-    sections: [
-      "Whisper RN Setup",
-      "Audio Recording Implementation",
-      "Speech Recognition",
-      "UI/UX Design",
-      "Performance Optimization",
-      "Error Handling",
-      "Testing Strategies"
-    ]
-  }
-];
+import { blogPosts } from "../../data/blogs";
 
 const blogsSchema = {
   "@context": "https://schema.org",
@@ -54,36 +19,20 @@ const blogsSchema = {
   "isPartOf": { "@id": "https://www.vipulkaushik.com/#website" },
   "mainEntity": {
     "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "BlogPosting",
-          "headline": "Mobile Application App Variants with Different Splash Screens and App Icons — React Native",
-          "description": "Learn how to create multiple app variants with different splash screens and app icons for React Native applications. This comprehensive guide covers the setup process and implementation details.",
-          "url": "https://medium.com/@vipulkaushik96/mobile-application-app-variants-with-different-splash-screens-and-app-icons-react-native-965ae6939e7d",
-          "author": { "@id": "https://www.vipulkaushik.com/#person" },
-          "datePublished": "2024-01-01",
-          "publisher": { "@id": "https://www.vipulkaushik.com/#person" },
-          "inLanguage": "en-US"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "BlogPosting",
-          "headline": "Build a Speech-to-Text React Native App with Whisper RN",
-          "description": "Create a powerful speech-to-text application using React Native and Whisper RN. This tutorial covers the complete implementation from setup to deployment.",
-          "url": "https://medium.com/@vipulkaushik96/build-a-speech-to-text-react-native-app-with-whisper-rn-364439770728",
-          "author": { "@id": "https://www.vipulkaushik.com/#person" },
-          "datePublished": "2024-01-01",
-          "publisher": { "@id": "https://www.vipulkaushik.com/#person" },
-          "inLanguage": "en-US"
-        }
+    "itemListElement": blogPosts.map((post, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.description,
+        "url": `https://www.vipulkaushik.com/blogs/${post.slug}`,
+        "author": { "@id": "https://www.vipulkaushik.com/#person" },
+        "datePublished": "2024-01-01",
+        "publisher": { "@id": "https://www.vipulkaushik.com/#person" },
+        "inLanguage": "en-US"
       }
-    ]
+    }))
   },
   "inLanguage": "en-US"
 };
@@ -133,8 +82,8 @@ const Blogs = () => {
             exit="hidden"
             className="w-full xl:max-w-[65%]"
           >
-            <div className="flex flex-col gap-4 sm:gap-6 max-h-[60vh] sm:max-h-[70vh] overflow-y-auto sm:overflow-visible">
-              {blogData.map((blog, index) => (
+            <div className="flex flex-col gap-4 sm:gap-6 max-h-[60vh] sm:max-h-[70vh] overflow-y-auto">
+              {blogPosts.map((blog, index) => (
                 <motion.div
                   key={index}
                   variants={fadeIn("up", 0.2 + index * 0.1)}
@@ -154,9 +103,11 @@ const Blogs = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-bold mb-3 group-hover:text-accent transition-colors duration-300 leading-tight">
-                    {blog.title}
-                  </h3>
+                  <Link href={`/blogs/${blog.slug}`}>
+                    <h3 className="text-lg sm:text-xl font-bold mb-3 group-hover:text-accent transition-colors duration-300 leading-tight cursor-pointer">
+                      {blog.title}
+                    </h3>
+                  </Link>
 
                   <p className="text-white/70 mb-4 leading-relaxed text-sm sm:text-base">
                     {blog.description}
@@ -177,16 +128,26 @@ const Blogs = () => {
                     </div>
                   </div>
 
-                  <a
-                    href={blog.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors duration-300 group/link text-sm sm:text-base"
-                  >
-                    <FaMedium className="text-base sm:text-lg" />
-                    <span className="font-medium">Read on Medium</span>
-                    <BsArrowRight className="text-xs sm:text-sm group-hover/link:translate-x-1 transition-transform duration-300" />
-                  </a>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <Link
+                      href={`/blogs/${blog.slug}`}
+                      className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors duration-300 group/link text-sm sm:text-base"
+                    >
+                      <span className="font-medium">Read Article</span>
+                      <BsArrowRight className="text-xs sm:text-sm group-hover/link:translate-x-1 transition-transform duration-300" />
+                    </Link>
+                    {blog.mediumLink && (
+                      <a
+                        href={blog.mediumLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors duration-300 text-sm sm:text-base"
+                      >
+                        <FaMedium className="text-base sm:text-lg" />
+                        <span className="font-medium">Read on Medium</span>
+                      </a>
+                    )}
+                  </div>
                 </motion.div>
               ))}
             </div>
