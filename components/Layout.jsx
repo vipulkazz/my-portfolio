@@ -73,11 +73,7 @@ const Layout = ({ children }) => {
           name="description"
           content="Vipul Kaushik — Full-stack mobile developer with 8+ years of experience building secure, scalable apps for SaaS, Fintech, and HealthTech companies."
         />
-        <meta
-          name="keywords"
-          content="Vipul Kaushik, React Native developer, full-stack mobile developer, Expo, Redux, Node.js, GraphQL, freelance mobile developer, hire React Native developer"
-        />
-        <meta name="author" content="Vipul Kaushik" />
+<meta name="author" content="Vipul Kaushik" />
         <meta name="theme-color" content="#f13024" />
         <meta name="robots" content="index, follow" />
 
