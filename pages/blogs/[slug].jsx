@@ -22,6 +22,21 @@ export async function getStaticProps({ params }) {
 }
 
 const BlogPost = ({ post }) => {
+  const faqSchema = post.faq
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
   const blogPostingSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -38,7 +53,8 @@ const BlogPost = ({ post }) => {
       name: "Vipul Kaushik",
       url: "https://www.vipulkaushik.com",
     },
-    datePublished: "2024-01-01",
+    datePublished: post.date,
+    dateModified: post.date,
     inLanguage: "en-US",
   };
 
@@ -60,6 +76,14 @@ const BlogPost = ({ post }) => {
             __html: JSON.stringify(blogPostingSchema),
           }}
         />
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(faqSchema),
+            }}
+          />
+        )}
       </Head>
 
       <Circles />
@@ -108,10 +132,24 @@ const BlogPost = ({ post }) => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight"
           >
             {post.title}
           </motion.h1>
+
+          {/* Author byline */}
+          <motion.p
+            variants={fadeIn("up", 0.45)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="text-white/60 text-sm mb-8"
+          >
+            By{" "}
+            <Link href="/about" className="text-accent hover:text-white transition-colors duration-300">
+              Vipul Kaushik
+            </Link>
+          </motion.p>
 
           {/* Article body */}
           <motion.div
@@ -119,7 +157,7 @@ const BlogPost = ({ post }) => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="mb-12 overflow-y-auto max-h-[60vh] sm:max-h-[65vh] pr-2"
+            className="mb-12"
           >
             <div
               className="blog-content"
@@ -147,6 +185,66 @@ const BlogPost = ({ post }) => {
               </a>
             </motion.div>
           )}
+
+          {/* Author bio */}
+          <motion.div
+            variants={fadeIn("up", 0.7)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="border-t border-white/10 pt-6 mt-6"
+          >
+            <p className="text-white/60 text-sm leading-relaxed">
+              Written by{" "}
+              <span className="text-white font-medium">Vipul Kaushik</span>
+              {" "}&mdash; CTO at Rolling Around, 8+ years building React Native apps.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block mt-3 text-accent hover:text-white transition-colors duration-300 text-sm font-medium"
+            >
+              Hire me &rarr;
+            </Link>
+          </motion.div>
+
+          {/* FAQ section */}
+          {post.faq && (
+            <motion.div
+              variants={fadeIn("up", 0.75)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="border-t border-white/10 pt-6 mt-6"
+            >
+              <h2 className="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+              <dl className="space-y-6">
+                {post.faq.map((item, index) => (
+                  <div key={index}>
+                    <dt className="text-white font-medium mb-2">{item.question}</dt>
+                    <dd className="text-white/60 text-sm leading-relaxed">{item.answer}</dd>
+                  </div>
+                ))}
+              </dl>
+            </motion.div>
+          )}
+
+          {/* Free Developer Tools */}
+          <div className="mt-8 border-t border-white/10 pt-8">
+            <h3 className="text-lg font-semibold mb-4">Free Developer Tools</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {[
+                { name: "JSON Formatter", path: "/tools/json-formatter" },
+                { name: "Image Compressor", path: "/tools/image-compressor" },
+                { name: "HEIC to JPG", path: "/tools/heic-to-jpg" },
+                { name: "PDF Merger", path: "/tools/merge-pdf" },
+                { name: "Word Counter", path: "/tools/word-counter" },
+              ].map((tool, i) => (
+                <Link key={i} href={tool.path} className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white/60 hover:text-accent hover:border-accent/50 transition-colors">
+                  {tool.name}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

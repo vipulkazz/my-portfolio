@@ -1,0 +1,43 @@
+# Vipul Kaushik — Full-Stack Mobile Developer
+
+> Full-stack mobile developer with 8+ years of experience building secure, scalable apps for SaaS, Fintech, and HealthTech. CTO at Rolling Around. Expert in React Native, Expo, Node.js, Redux, GraphQL, MongoDB, Firebase, and Supabase.
+
+## Pages
+
+- [Home](https://www.vipulkaushik.com/): Portfolio homepage
+- [About](https://www.vipulkaushik.com/about): Skills, experience, credentials
+- [Services](https://www.vipulkaushik.com/services): Development services offered
+- [Work](https://www.vipulkaushik.com/work): Portfolio of shipped apps
+- [Blog](https://www.vipulkaushik.com/blogs): Technical articles on React Native
+- [Contact](https://www.vipulkaushik.com/contact): Hire Vipul for your project
+- [Testimonials](https://www.vipulkaushik.com/testimonials): Client reviews
+
+## Free Developer Tools
+
+- [HEIC to JPG Converter](https://www.vipulkaushik.com/tools/heic-to-jpg): Free online HEIC to JPG converter — convert Apple HEIC/HEIF photos to JPEG instantly in your browser, no upload required, fully client-side.
+- [Image Compressor](https://www.vipulkaushik.com/tools/image-compressor): Free online image compressor — reduce PNG, JPEG, and WebP file sizes with adjustable quality, bulk compression, and instant browser-based processing.
+- [JSON Formatter](https://www.vipulkaushik.com/tools/json-formatter): Free online JSON formatter and validator — beautify, minify, and validate JSON data instantly with syntax highlighting and error detection.
+- [PDF Merger](https://www.vipulkaushik.com/tools/merge-pdf): Free online PDF merger — combine multiple PDF files into one document instantly in your browser, no upload to server, fully client-side processing.
+- [Word Counter](https://www.vipulkaushik.com/tools/word-counter): Free online word counter — count words, characters, sentences, and paragraphs with reading time estimates for writers, bloggers, and SEO professionals.
+
+## Blog Posts
+
+- [Mobile Application App Variants with Different Splash Screens and App Icons — React Native](https://www.vipulkaushik.com/blogs/app-variants-splash-screens-react-native)
+- [Build a Speech-to-Text React Native App with Whisper RN](https://www.vipulkaushik.com/blogs/speech-to-text-react-native-whisper)
+- [Expo vs Bare Workflow in React Native: Which Should You Choose in 2024?](https://www.vipulkaushik.com/blogs/react-native-expo-vs-bare-workflow)
+- [10 React Native Performance Tips That Actually Work](https://www.vipulkaushik.com/blogs/react-native-performance-optimization)
+- [Complete Guide to Push Notifications in React Native (FCM + APNs)](https://www.vipulkaushik.com/blogs/react-native-push-notifications-guide)
+- [Automate React Native Builds with GitHub Actions and Fastlane](https://www.vipulkaushik.com/blogs/react-native-ci-cd-github-actions)
+- [Redux vs Zustand vs Jotai: React Native State Management in 2024](https://www.vipulkaushik.com/blogs/react-native-state-management-2024)
+- [Building HIPAA-Compliant Mobile Apps with React Native](https://www.vipulkaushik.com/blogs/hipaa-compliant-react-native-app)
+- [How I Use Claude Code to Build React Native Apps 10x Faster](https://www.vipulkaushik.com/blogs/claude-code-react-native-development)
+- [Callstack's React Native Ecosystem: Tools Every Developer Should Know](https://www.vipulkaushik.com/blogs/callstack-react-native-tools-2025)
+- [Using Vercel with Expo and React Native Web for Universal Apps](https://www.vipulkaushik.com/blogs/vercel-expo-react-native-web)
+- [Callstack's Mobile Tester Agent: AI-Powered Testing for React Native Apps](https://www.vipulkaushik.com/blogs/callstack-mobile-tester-agent)
+- [EAS Build and EAS Update: The Complete Guide to Shipping React Native Apps in 2025](https://www.vipulkaushik.com/blogs/expo-eas-build-update-guide)
+
+## Contact
+
+- Email: vipulkaushik96@gmail.com
+- LinkedIn: https://www.linkedin.com/in/vipul-kaushik/
+- GitHub: https://github.com/vipulkazz

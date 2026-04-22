@@ -10,6 +10,7 @@ import {
   HiChatBubbleBottomCenterText,
   HiEnvelope,
   HiDocumentText,
+  HiWrenchScrewdriver,
 } from "react-icons/hi2";
 
 // nav data
@@ -27,6 +28,11 @@ export const navData = [
     name: "blogs",
     path: "/blogs",
     Icon: HiDocumentText,
+  },
+  {
+    name: "tools",
+    path: "/tools",
+    Icon: HiWrenchScrewdriver,
   },
   {
     name: "contact",

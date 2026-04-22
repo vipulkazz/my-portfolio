@@ -94,16 +94,20 @@ export const aboutData = [
   "title": "experience",
   "info": [
     {
-      "title": "Engineering Manager - Key Mouse IT, Pvt Ltd",
-      "stage": "01 February, 2024 - Present"
+      "title": "Chief Technology Officer - Rolling Around",
+      "stage": "June, 2024 - Present"
     },
     {
-      "title": "Technical Lead (React Native) - Segwitz Sdn Bhd (Malaysia Remote)",
-      "stage": "09 November, 2020 - 30 January, 2024"
+      "title": "Engineering Manager - KeyMouse IT",
+      "stage": "February, 2024 - April, 2026"
     },
     {
-      "title": "React Native Developer - Addval Solutions Pvt Ltd (Mohali)",
-      "stage": "January, 2018 - October, 2020"
+      "title": "Team Leader (React Native) - SegWitz Sdn Bhd (Malaysia Remote)",
+      "stage": "November, 2020 - February, 2024"
+    },
+    {
+      "title": "React Native Developer - Addval Labs (Mohali)",
+      "stage": "July, 2018 - October, 2020"
     }
   ]
 },
@@ -279,5 +283,9 @@ const About = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  return { props: {} };
+}
 
 export default About;

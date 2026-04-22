@@ -1,5 +1,44 @@
 import nodemailer from 'nodemailer';
 
+// --- Simple in-memory rate limiter ---
+const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const RATE_LIMIT_MAX = 5; // max requests per window per IP
+const rateLimitMap = new Map(); // IP -> [timestamp, ...]
+
+// Clean up stale entries every 30 minutes
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, timestamps] of rateLimitMap) {
+    const valid = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+    if (valid.length === 0) {
+      rateLimitMap.delete(ip);
+    } else {
+      rateLimitMap.set(ip, valid);
+    }
+  }
+}, 30 * 60 * 1000);
+
+function isRateLimited(req) {
+  const ip =
+    (req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
+    req.socket.remoteAddress ||
+    'unknown';
+  const now = Date.now();
+  const timestamps = (rateLimitMap.get(ip) || []).filter(
+    (t) => now - t < RATE_LIMIT_WINDOW_MS
+  );
+
+  if (timestamps.length >= RATE_LIMIT_MAX) {
+    rateLimitMap.set(ip, timestamps);
+    return true;
+  }
+
+  timestamps.push(now);
+  rateLimitMap.set(ip, timestamps);
+  return false;
+}
+// --- End rate limiter ---
+
 // Escapes HTML special characters to prevent XSS in HTML email templates.
 function sanitize(str) {
   if (typeof str !== 'string') return '';
@@ -34,6 +73,10 @@ const transporter = nodemailer.createTransport({
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
+  }
+
+  if (isRateLimited(req)) {
+    return res.status(429).json({ message: 'Too many requests. Please try again later.' });
   }
 
   try {

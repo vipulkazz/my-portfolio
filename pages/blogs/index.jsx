@@ -28,7 +28,7 @@ const blogsSchema = {
         "description": post.description,
         "url": `https://www.vipulkaushik.com/blogs/${post.slug}`,
         "author": { "@id": "https://www.vipulkaushik.com/#person" },
-        "datePublished": "2024-01-01",
+        "datePublished": post.date,
         "publisher": { "@id": "https://www.vipulkaushik.com/#person" },
         "inLanguage": "en-US"
       }
@@ -82,7 +82,7 @@ const Blogs = () => {
             exit="hidden"
             className="w-full xl:max-w-[65%]"
           >
-            <div className="flex flex-col gap-4 sm:gap-6 max-h-[60vh] sm:max-h-[70vh] overflow-y-auto">
+            <div className="flex flex-col gap-4 sm:gap-6">
               {blogPosts.map((blog, index) => (
                 <motion.div
                   key={index}

@@ -136,6 +136,37 @@ const Testimonials = () => {
           <TestimonialSlider />
         </motion.div>
 
+        {/* Hidden crawlable content for SEO — slider uses ssr: false */}
+        <section className="sr-only" aria-label="Client testimonials list">
+          <h2>Client Testimonials</h2>
+          <ul>
+            <li>
+              <blockquote>Vipul never missed a deadline and always found a solution, no matter the challenge. He was proactive, thorough, and consistently delivered high-quality work — even beyond the contract. Highly recommended if you&#39;re building your first app!</blockquote>
+              <cite>Client – Cross-platform Navigation App, Founder</cite>
+            </li>
+            <li>
+              <blockquote>Great experience! Delivered a high-quality design system for our React Native app with precision and speed.</blockquote>
+              <cite>Client – Product Design System, Startup Designer</cite>
+            </li>
+            <li>
+              <blockquote>Skilled, responsive, and quick to solve problems. Vipul handled both frontend and backend seamlessly. Would definitely work with him again.</blockquote>
+              <cite>Client – Full-Stack Mobile App, Tech Lead</cite>
+            </li>
+            <li>
+              <blockquote>Vipul and his team provided critical insight into our development strategy and solved complex bugs efficiently. We&#39;ll continue working with him for years to come.</blockquote>
+              <cite>Client – Mobile App Strategy, Product Manager</cite>
+            </li>
+            <li>
+              <blockquote>Outstanding communication and flawless execution. Completed the task quickly and exactly as needed. AAA+++ experience!</blockquote>
+              <cite>Client – SDK Update, Project Owner</cite>
+            </li>
+            <li>
+              <blockquote>Excellent developer with great communication, strong analytic skills, and high attention to detail. Highly recommended.</blockquote>
+              <cite>Client – AI App, Founder</cite>
+            </li>
+          </ul>
+        </section>
+
         {/* note */}
         <motion.p
           variants={fadeIn("up", 0.6)}
@@ -159,5 +190,9 @@ const Testimonials = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  return { props: {} };
+}
 
 export default Testimonials;

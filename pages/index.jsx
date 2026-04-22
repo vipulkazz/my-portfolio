@@ -36,8 +36,8 @@ const Home = () => {
             exit="hidden"
             className="h1"
           >
-            Transforming Ideas <br /> Into{" "}
-            <span className="text-accent">Digital Reality</span>
+            React Native Developer <br /> for{" "}
+            <span className="text-accent">Hire</span>
           </motion.h1>
 
 
@@ -67,7 +67,7 @@ const Home = () => {
         </div>
       </div>
       {/* image */}
-      <div className="w-full xl:w-[1280px] h-full absolute right-0 bottom-0">
+      <div className="w-full xl:w-[1280px] h-full absolute right-[70px] xl:right-[80px] bottom-0">
         {/* bg img */}
         <div
           role="img"
@@ -85,7 +85,7 @@ const Home = () => {
           animate="show"
           exit="hidden"
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 lg:right-[8%] xl:right-[8%]"
+          className="w-full h-full max-w-[600px] max-h-[638px] absolute -bottom-32 lg:bottom-[-13%] lg:right-[2%] xl:right-[6%]"
         >
           <Avatar />
         </motion.div>
@@ -93,5 +93,9 @@ const Home = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  return { props: {} };
+}
 
 export default Home;

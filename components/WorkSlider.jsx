@@ -13,48 +13,96 @@ const workSlides = {
     {
       images: [
         {
-          title: "AFA",
-          path: "/AFA.png",
-          link: "https://apps.apple.com/my/app/afa-sports-venue-booking-app/id1526420132",
-        },
-        {
           title: "Rolling Around",
-          path: "/rollingaround.png",
-          link: "https://apps.apple.com/us/app/rolling-around/id6670560695",
+          path: "/projects/rollingaround-og.png",
+          link: "https://rollingaround.app",
         },
         {
-          title: "Pineapple",
-          path: "/Pineapple.png",
-          link: "https://apps.apple.com/ca/app/pineapple-malaysia/id1626465032",
+          title: "BatchLeads",
+          path: "/projects/batchleads.png",
+          link: "https://batchleads.io",
         },
         {
-          title: "Everyone",
-          path: "/everyone.png",
-          link: "https://apps.apple.com/in/app/everyone/id6745819961", // iOS link not found
+          title: "Penny Profit",
+          path: "/projects/pennyprofit.png",
+          link: "https://www.mypennyprofit.com/",
+        },
+        {
+          title: "Jardinette",
+          path: "/projects/jardinette.webp",
+          link: "https://app.jardinette.ca",
         },
       ],
     },
     {
       images: [
         {
-          title: "Yodi",
-          path: "/yodi.png",
-          link: "https://apps.apple.com/us/app/pairs-yodi-relationship-coach/id6464098174",
+          title: "MOBE",
+          path: "/projects/mobe.webp",
+          link: "https://play.google.com/store/apps/details?id=com.keymouseit.mobe",
+        },
+        {
+          title: "Passion TV",
+          path: "/projects/passiontv.webp",
+          link: "https://play.google.com/store/apps/details?id=com.passionpulse",
+        },
+        {
+          title: "Outlier",
+          path: "/projects/outlier.png",
+          link: "https://www.outlier.org",
+        },
+        {
+          title: "Pipeline CRM",
+          path: "/projects/pipeline.png",
+          link: "https://www.pipelinecrm.com",
+        },
+      ],
+    },
+    {
+      images: [
+        {
+          title: "Authorify",
+          path: "/projects/authorify.png",
+          link: "https://www.authorify.com",
         },
         {
           title: "Nooora",
-          path: "/nooora.png",
+          path: "/projects/nooora-web.png",
           link: "https://nooora.ae",
         },
         {
-          title: "Penny",
-          path: "/penny.png",
-          link: "https://apps.apple.com/in/app/pennyprofit/id1641343370",
+          title: "Chill Days",
+          path: "/projects/chilldays.png",
+          link: "https://chilldays.com/",
         },
         {
-          title: "Opirescue",
-          path: "/opirescue.png",
-          link: "https://apps.apple.com/in/app/opirescue/id1018614161",
+          title: "Mission Efficiency",
+          path: "/projects/mission-efficiency.png",
+          link: "https://missionefficiency.org/",
+        },
+      ],
+    },
+    {
+      images: [
+        {
+          title: "AFA",
+          path: "/projects/afa-web.png",
+          link: "https://www.afa.community/",
+        },
+        {
+          title: "Pineapple",
+          path: "/projects/pineapple-web.jpg",
+          link: "https://pineappleresources.com.my/",
+        },
+        {
+          title: "Munchh",
+          path: "/projects/munchh.png",
+          link: "https://apps.apple.com/zm/app/munchh/id1192257941",
+        },
+        {
+          title: "KidAdvisor",
+          path: "/projects/kidadvisor.webp",
+          link: "https://kidadvisor.ca",
         },
       ],
     },

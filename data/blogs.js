@@ -419,6 +419,20 @@ export default {
 
 <h2>My Recommendation</h2>
 <p>Start with managed workflow and <code>expo prebuild</code> only when you genuinely need it. In 2024, Config Plugins cover the vast majority of native integration needs without ejecting. If you're building a healthcare app, an enterprise tool with a proprietary SDK, or an app with multiple build variants, start bare from day one — the complexity is lower when you design for it upfront rather than migrating mid-project.</p>`,
+    faq: [
+      {
+        question: "What is the difference between Expo managed and bare workflow?",
+        answer: "In the managed workflow, Expo owns the native layer and you write only JavaScript. In the bare workflow, you have full access to the ios/ and android/ directories and manage native dependencies yourself. A middle path — bare workflow with Expo modules — lets you keep native directories while using Expo's SDK and Config Plugins."
+      },
+      {
+        question: "When should I use Expo managed workflow for React Native?",
+        answer: "Use managed workflow when you are prototyping or building an MVP, your feature set is covered by the Expo SDK, your team has limited native experience, or you want instant team previews via Expo Go without a build step."
+      },
+      {
+        question: "Can I migrate from Expo managed to bare workflow?",
+        answer: "Yes. Running npx expo prebuild generates the ios/ and android/ directories from your current config. From that point you are in the bare workflow and can commit the generated files. You keep all Expo SDK packages and EAS services after migration."
+      },
+    ],
   },
 
   {
@@ -549,6 +563,20 @@ const PostCard = React.memo(({ post, onPress }) =&gt; (
 <p>Open <strong>Flipper</strong> and use the React DevTools plugin to record a render trace before touching a single line of code. You'll often find that the bottleneck is a single component re-rendering 50 times per second — and the fix is a one-line <code>useMemo</code>, not a week of refactoring. Measure first, optimise second.</p>
 
 <blockquote>Premature optimisation is the root of all evil — but uninformed optimisation runs a close second. Know what's slow before you fix it.</blockquote>`,
+    faq: [
+      {
+        question: "How do I improve React Native app performance?",
+        answer: "Start by enabling Hermes for faster startup, optimise FlatList with getItemLayout and windowSize, use React.memo to prevent unnecessary re-renders, and enable the native driver for animations. Always profile with Flipper before optimising to find the actual bottleneck."
+      },
+      {
+        question: "What is Hermes and why should I enable it in React Native?",
+        answer: "Hermes is a JavaScript engine built specifically for React Native that pre-compiles JS to bytecode at build time. It significantly reduces startup time and memory usage. As of React Native 0.70, Hermes is enabled by default in new projects."
+      },
+      {
+        question: "How do I optimise FlatList performance in React Native?",
+        answer: "Use getItemLayout to skip measurement, set windowSize to limit off-screen rendering, add keyExtractor, use React.memo on row components, and avoid inline functions in renderItem. These changes alone can eliminate most list-related jank."
+      },
+    ],
   },
 
   {
@@ -1243,6 +1271,20 @@ await logAuditEvent(AuditAction.VIEW, 'PatientRecord', patientId);</code></pre>
 </ul>
 
 <p>HIPAA compliance is not a feature you add at the end of a project. It's an architectural decision that affects your data model, third-party dependencies, CI/CD pipeline, and release process. The teams I've seen handle it best are the ones who embed a compliance checklist into their definition of done from day one — treating security as a first-class concern, not an afterthought.</p>`,
+    faq: [
+      {
+        question: "How do I make a React Native app HIPAA compliant?",
+        answer: "You need encryption at rest and in transit (TLS 1.2+), secure storage using Keychain on iOS and Keystore on Android, biometric authentication, audit logging of all PHI access, PHI minimisation, and a Business Associate Agreement (BAA) with every third-party service that handles protected health information."
+      },
+      {
+        question: "What is PHI and how should I handle it in a mobile app?",
+        answer: "Protected Health Information (PHI) is any data that can identify an individual and relates to their health status, healthcare provision, or payment. On mobile, PHI can exist in network responses, local databases, log files, clipboard content, or screenshots. Minimise PHI storage on-device, encrypt what you must store, and maintain an audit trail of all access."
+      },
+      {
+        question: "Do I need a BAA for my React Native healthcare app?",
+        answer: "Yes. A Business Associate Agreement is required with every third-party service that processes, stores, or transmits PHI on your behalf. This includes cloud providers, analytics services, crash reporting tools, and push notification services. Without a signed BAA, using that service with PHI is a HIPAA violation."
+      },
+    ],
   },
 
   {

@@ -72,7 +72,7 @@
 
 @layer base {
   body {
-    @apply bg-secondary leading-relaxed overflow-hidden;
+    @apply bg-secondary leading-relaxed;
   }
   .page {
     @apply w-full h-screen overflow-hidden;

@@ -171,10 +171,31 @@ const Services = () => {
             <ServiceSlider />
           </motion.div>
         </div>
+
+        {/* Hidden crawlable content for SEO — slider uses ssr: false */}
+        <section className="sr-only" aria-label="Services list">
+          <h2>Services</h2>
+          <ul>
+            <li><strong>Cross-Platform Development</strong> — Build native iOS &amp; Android apps with React Native (CLI &amp; Expo), TypeScript, and modern state management (Redux, Zustand).</li>
+            <li><strong>Backend &amp; API Integration</strong> — Node.js, Express.js, Firebase, PostgreSQL, MongoDB, REST APIs, GraphQL, and Supabase integration.</li>
+            <li><strong>Payment Systems</strong> — Stripe subscriptions, PayPal, Razorpay, in-app purchases, and secure payment gateway integration.</li>
+            <li><strong>Security &amp; Compliance</strong> — GDPR/HIPAA compliance, secure authentication, OAuth, JWT, OTP systems, and data protection.</li>
+            <li><strong>Location Services</strong> — Google Maps, Mapbox integration, location tracking, and geolocation features for mobile apps.</li>
+            <li><strong>Push Notifications</strong> — Expo notifications, Firebase Cloud Messaging (FCM), OneSignal integration for real-time updates.</li>
+            <li><strong>App Store Deployment</strong> — iOS App Store &amp; Google Play Store submission, Fastlane automation, and store optimization.</li>
+            <li><strong>Cloud &amp; DevOps</strong> — CI/CD with Fastlane, Bitrise, GitHub Actions, Docker, and cloud infrastructure management.</li>
+            <li><strong>Testing &amp; Debugging</strong> — Jest, Detox, React Testing Library, Flipper, Reactotron for comprehensive testing and debugging.</li>
+            <li><strong>SaaS &amp; Analytics</strong> — Multi-tenant SaaS dashboards, real-time analytics, KYC systems, and business intelligence features.</li>
+          </ul>
+        </section>
       </div>
       <Bulb />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  return { props: {} };
+}
 
 export default Services;

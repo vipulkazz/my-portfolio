@@ -6,9 +6,10 @@ const Avatar = () => {
       <Image
         src="/SubjectOne.png"
         alt="Vipul Kaushik, Full-Stack Mobile Developer"
-        width={737}
-        height={678}
+        width={724}
+        height={638}
         className="translate-z-0 w-full h-full"
+        priority
       />
     </div>
   );
