@@ -52,6 +52,7 @@
   "dependencies": {
     "@next/font": "^13.4.4",
     "@sendgrid/mail": "^8.1.5",
+    "browser-image-compression": "^2.0.2",
     "dotenv": "^16.5.0",
     "framer-motion": "^10.12.16",
     "heic2any": "^0.0.4",
