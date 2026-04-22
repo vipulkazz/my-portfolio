@@ -48,7 +48,12 @@ const Layout = ({ children }) => {
         "@id": "https://www.vipulkaushik.com/#person",
         "name": "Vipul Kaushik",
         "url": "https://www.vipulkaushik.com",
-        "image": "https://www.vipulkaushik.com/SubjectOne.png",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://www.vipulkaushik.com/SubjectOne.png",
+          "width": 724,
+          "height": 638
+        },
         "jobTitle": "Full-Stack Mobile Developer",
         "description": "Full-stack mobile developer with 8+ years of experience building secure, scalable apps for SaaS, Fintech, and HealthTech.",
         "sameAs": [
@@ -66,7 +71,12 @@ const Layout = ({ children }) => {
         "name": "Vipul Kaushik",
         "description": "Full-stack mobile developer portfolio",
         "publisher": { "@id": "https://www.vipulkaushik.com/#person" },
-        "inLanguage": "en-US"
+        "inLanguage": "en-US",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.vipulkaushik.com/blogs?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
     ]
   };
@@ -128,6 +138,23 @@ const Layout = ({ children }) => {
       <TopLeftImg />
       <Nav />
       <Header />
+
+      {/* Visible breadcrumb navigation for scrollable pages */}
+      {(router.asPath.startsWith("/blogs/") || router.asPath.startsWith("/tools/")) && (
+        <nav aria-label="Breadcrumb" className="relative z-10 container mx-auto px-4 pt-20 pb-0">
+          <ol className="flex items-center gap-2 text-xs text-white/40">
+            <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
+            <li>/</li>
+            {pathSegments.length > 1 && (
+              <>
+                <li><Link href={`/${pathSegments[0]}`} className="hover:text-accent transition-colors capitalize">{pathSegments[0]}</Link></li>
+                <li>/</li>
+              </>
+            )}
+            <li className="text-white/60 truncate max-w-[200px]">{pageName}</li>
+          </ol>
+        </nav>
+      )}
 
       {/* main content */}
       {children}

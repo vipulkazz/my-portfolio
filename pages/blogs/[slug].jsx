@@ -74,6 +74,9 @@ const BlogPost = ({ post }) => {
           property="og:url"
           content={`https://www.vipulkaushik.com/blogs/${post.slug}`}
         />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:author" content="https://www.vipulkaushik.com/about" />
+        <meta property="article:section" content="Technology" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

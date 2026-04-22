@@ -59,6 +59,12 @@ Allow: Skills and experience information can be referenced
 - Work: Portfolio of completed projects
 - Testimonials: Client feedback and reviews
 - Blogs: Technical articles and tutorials
+- Tools: /tools - Free online tools index
+- Tools: /tools/heic-to-jpg - HEIC to JPG converter
+- Tools: /tools/image-compressor - Image compressor
+- Tools: /tools/json-formatter - JSON formatter
+- Tools: /tools/merge-pdf - PDF merger
+- Tools: /tools/word-counter - Word counter
 - Contact: Contact form and information
 
 # Usage Guidelines
@@ -68,4 +74,4 @@ Allow: Skills and experience information can be referenced
 - Contact information should be used appropriately
 
 # Last Updated
-Last-Modified: 2025-03-15 
+Last-Modified: 2026-04-22 

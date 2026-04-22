@@ -8,6 +8,7 @@ const Avatar = () => {
         alt="Vipul Kaushik, Full-Stack Mobile Developer"
         width={724}
         height={638}
+        sizes="(max-width: 960px) 0px, 600px"
         className="translate-z-0 w-full h-full"
         priority
       />
