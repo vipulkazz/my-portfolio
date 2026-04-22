@@ -80,11 +80,11 @@ const Home = () => {
 
         {/* avatar */}
         <motion.div
-          variants={fadeIn("up", 0.5)}
+          variants={fadeIn("up", 0.1)}
           initial="hidden"
           animate="show"
           exit="hidden"
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
           className="w-full h-full max-w-[600px] max-h-[638px] absolute -bottom-32 lg:bottom-[-13%] lg:right-[2%] xl:right-[6%]"
         >
           <Avatar />

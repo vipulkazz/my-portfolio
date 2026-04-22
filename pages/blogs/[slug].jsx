@@ -49,9 +49,13 @@ const BlogPost = ({ post }) => {
       url: "https://www.vipulkaushik.com",
     },
     publisher: {
-      "@type": "Person",
+      "@type": "Organization",
       name: "Vipul Kaushik",
       url: "https://www.vipulkaushik.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.vipulkaushik.com/SubjectOne.png",
+      },
     },
     datePublished: post.date,
     dateModified: post.date,
