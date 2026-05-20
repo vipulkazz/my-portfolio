@@ -104,10 +104,10 @@ const Home = () => {
         <h3>Featured Project Outcomes</h3>
         <ul>
           <li>Rolling Around — Built a bikepacking app with 10,000+ waypoints, established routes, community features, and a marketplace for cycling enthusiasts. React Native, NestJS, Expo.</li>
-          <li>BatchLeads — Developed a real estate lead generation app used by thousands of property investors and agents across the US. React Native with complex map integrations.</li>
           <li>Penny Profit — Built a fintech investment tracking app with portfolio management, real-time market data, and profit analysis dashboards.</li>
           <li>Pipeline CRM — Contributed to a sales CRM platform helping businesses automate workflows, track leads, and close deals faster.</li>
-          <li>Outlier — Worked on an online education platform making affordable college courses accessible to students worldwide.</li>
+          <li>Passion TV — Built a short-form video streaming and reels platform with personalized feeds, social engagement, and creator tools on React Native, Node.js, and MongoDB.</li>
+          <li>Jardinette — Shipped a plant discovery platform with personalized care guides and a Next.js, React, and TypeScript stack.</li>
         </ul>
 
         <h3>How I Work</h3>

@@ -18,11 +18,6 @@ const workSlides = {
           link: "https://rollingaround.app",
         },
         {
-          title: "BatchLeads",
-          path: "/projects/batchleads.png",
-          link: "https://batchleads.io",
-        },
-        {
           title: "Penny Profit",
           path: "/projects/pennyprofit.png",
           link: "https://www.mypennyprofit.com/",
@@ -32,38 +27,19 @@ const workSlides = {
           path: "/projects/jardinette.webp",
           link: "https://app.jardinette.ca",
         },
-      ],
-    },
-    {
-      images: [
-        {
-          title: "MOBE",
-          path: "/projects/mobe.webp",
-          link: "https://play.google.com/store/apps/details?id=com.keymouseit.mobe",
-        },
         {
           title: "Passion TV",
           path: "/projects/passiontv.webp",
           link: "https://play.google.com/store/apps/details?id=com.passionpulse",
         },
-        {
-          title: "Outlier",
-          path: "/projects/outlier.png",
-          link: "https://www.outlier.org",
-        },
-        {
-          title: "Pipeline CRM",
-          path: "/projects/pipeline.png",
-          link: "https://www.pipelinecrm.com",
-        },
       ],
     },
     {
       images: [
         {
-          title: "Authorify",
-          path: "/projects/authorify.png",
-          link: "https://www.authorify.com",
+          title: "Pipeline CRM",
+          path: "/projects/pipeline.png",
+          link: "https://www.pipelinecrm.com",
         },
         {
           title: "Nooora",
@@ -76,19 +52,14 @@ const workSlides = {
           link: "https://chilldays.com/",
         },
         {
-          title: "Mission Efficiency",
-          path: "/projects/mission-efficiency.png",
-          link: "https://missionefficiency.org/",
+          title: "AFA",
+          path: "/projects/afa-web.png",
+          link: "https://www.afa.community/",
         },
       ],
     },
     {
       images: [
-        {
-          title: "AFA",
-          path: "/projects/afa-web.png",
-          link: "https://www.afa.community/",
-        },
         {
           title: "Pineapple",
           path: "/projects/pineapple-web.jpg",
@@ -98,11 +69,6 @@ const workSlides = {
           title: "Munchh",
           path: "/projects/munchh.png",
           link: "https://apps.apple.com/zm/app/munchh/id1192257941",
-        },
-        {
-          title: "KidAdvisor",
-          path: "/projects/kidadvisor.webp",
-          link: "https://kidadvisor.ca",
         },
       ],
     },
